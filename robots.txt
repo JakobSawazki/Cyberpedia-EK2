@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jakobsawazki.github.io/Cyberpedia-EK2/sitemap.xml

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Netzwerktechnik verständlich erklärt: WLAN-Frequenzen, Dämpfung, Router, Mesh, Kupfer und Glasfaser mit interaktiven Simulationen.">
+  <meta name="theme-color" content="#0b1020">
+  <title>Netzwerke & WLAN | Cyberpedia</title>
+  <link rel="canonical" href="https://jakobsawazki.github.io/Cyberpedia-EK2/netzwerke.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Netzwerke & WLAN | Cyberpedia">
+  <meta property="og:description" content="WLAN, Funktechnik, Router, Kupfer und Glasfaser verständlich erklärt.">
+  <meta property="og:image" content="https://jakobsawazki.github.io/Cyberpedia-EK2/assets/cyberpedia-hero.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="netzwerke">
+  <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="Cyberpedia Startseite"><img src="assets/logo.svg" alt="" width="44" height="44"><span><strong>Cyberpedia</strong><small>EK2 Digitalprojekt</small></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav"><span class="sr-only">Menü öffnen</span>☰</button>
+      <nav id="main-nav" class="main-nav" aria-label="Hauptnavigation">
+        <a href="index.html" data-nav="home">Start</a><a href="netzwerke.html" data-nav="netzwerke">Netzwerke</a><a href="sicherheit.html" data-nav="sicherheit">Sicherheit</a><a href="medienkompetenz.html" data-nav="medien">Medienkompetenz</a><a class="nav-quiz" href="quiz.html" data-nav="quiz">Quiz</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Darstellung wechseln" title="Hell/Dunkel umschalten">◐</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero hero-network">
+      <div class="container page-hero-grid">
+        <div><p class="breadcrumbs"><a href="index.html">Start</a><span>›</span>Netzwerke</p><p class="eyebrow">Technische Grundlagen</p><h1>Netzwerke, WLAN und Übertragungsmedien</h1><p class="lead">Wie gelangen Daten vom Router zum Endgerät? Welche Rolle spielen Frequenz, Entfernung und Hindernisse? Und wann ist Kupfer oder Glasfaser die bessere Wahl?</p></div>
+        <div class="chapter-badge" aria-hidden="true"><span>📡</span><strong>01</strong><small>Netzwerke</small></div>
+      </div>
+    </section>
+
+    <div class="container chapter-layout">
+      <aside class="toc" aria-label="Inhaltsverzeichnis">
+        <strong>In diesem Kapitel</strong>
+        <a href="#grundlagen">Netzwerk-Grundlagen</a><a href="#frequenzen">WLAN-Frequenzen</a><a href="#daempfung">Dämpfung & Hindernisse</a><a href="#simulator-wlan">WLAN-Simulator</a><a href="#router">Router optimieren</a><a href="#leitungen">Kupfer & Glasfaser</a><a href="#simulator-kabel">Leitungs-Vergleich</a>
+      </aside>
+
+      <div class="chapter-content">
+        <section id="grundlagen" class="content-section">
+          <p class="section-number">01 · Grundlagen</p>
+          <h2>Was ist ein Netzwerk?</h2>
+          <p>Ein Computernetzwerk verbindet mindestens zwei Geräte, damit sie Daten austauschen und gemeinsame Ressourcen nutzen können. Dazu gehören beispielsweise Internetzugang, Drucker, Dateien oder Serverdienste.</p>
+          <div class="info-grid three">
+            <article class="info-card"><span>💻</span><h3>Endgeräte</h3><p>Computer, Smartphones, Tablets, Drucker, Sensoren oder Maschinen erzeugen und verarbeiten Daten.</p></article>
+            <article class="info-card"><span>↔️</span><h3>Übertragungsweg</h3><p>Daten werden kabelgebunden über elektrische beziehungsweise optische Signale oder drahtlos über Funk übertragen.</p></article>
+            <article class="info-card"><span>🧭</span><h3>Netzwerkgeräte</h3><p>Switches verbinden Geräte im lokalen Netz. Router leiten Daten zwischen verschiedenen Netzen weiter.</p></article>
+          </div>
+          <div class="definition"><strong>LAN und WLAN</strong><p>Ein <em>Local Area Network</em> (LAN) ist ein lokales Netzwerk. Erfolgt die Verbindung per Funk, spricht man von WLAN. WLAN ersetzt nur den lokalen Kabelweg – der Internetanschluss selbst kann weiterhin über DSL, Kabel oder Glasfaser erfolgen.</p></div>
+        </section>
+
+        <section id="frequenzen" class="content-section">
+          <p class="section-number">02 · Funktechnik</p>
+          <h2>2,4 GHz, 5 GHz und 6 GHz</h2>
+          <p>WLAN nutzt elektromagnetische Wellen. Höhere Frequenzen ermöglichen oft breitere Funkkanäle und damit hohe Datenraten. Gleichzeitig werden sie in Gebäuden meist stärker gedämpft und haben bei gleicher Sendeleistung eine geringere praktische Reichweite.</p>
+          <div class="comparison-table-wrap">
+            <table class="comparison-table">
+              <thead><tr><th>Band</th><th>Stärken</th><th>Grenzen</th><th>Typischer Einsatz</th></tr></thead>
+              <tbody>
+                <tr><td><strong>2,4 GHz</strong><small>Wellenlänge ca. 12,5 cm</small></td><td>Gute Reichweite, vergleichsweise gute Wanddurchdringung</td><td>Weniger freie Kanäle, häufig stark belegt</td><td>IoT-Geräte, größere Entfernung, ältere Endgeräte</td></tr>
+                <tr><td><strong>5 GHz</strong><small>Wellenlänge ca. 6 cm</small></td><td>Mehr Kanäle, oft höhere Datenrate, weniger Überlastung</td><td>Kürzere Reichweite, stärkere Dämpfung durch Wände</td><td>Streaming, Videokonferenz, Gaming im nahen Umfeld</td></tr>
+                <tr><td><strong>6 GHz</strong><small>Wellenlänge ca. 5 cm</small></td><td>Zusätzliches Spektrum und sehr breite Kanäle bei passenden Geräten</td><td>Nur mit kompatiblen Geräten; Reichweite ähnlich oder geringer als 5 GHz</td><td>Wi‑Fi 6E/7 in dichter Geräteumgebung</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="note"><strong>Wichtig:</strong> Das Frequenzband allein bestimmt nicht die Geschwindigkeit. WLAN-Standard, Kanalbreite, Antennen, Störungen, Entfernung und Endgerät wirken gemeinsam.</div>
+        </section>
+
+        <section id="daempfung" class="content-section">
+          <p class="section-number">03 · Signalqualität</p>
+          <h2>Dämpfung, Reflexion und Störungen</h2>
+          <p>Mit wachsender Entfernung verteilt sich die Sendeleistung auf eine größere Fläche. In Gebäuden kommen Absorption, Reflexion und Mehrwegeausbreitung hinzu. Der Empfänger erhält deshalb ein schwächeres und teilweise verzerrtes Signal.</p>
+          <div class="material-list">
+            <article><span class="level level-low">gering</span><div><h3>Holz, Trockenbau, normales Glas</h3><p>Meist nur mäßige Abschwächung. Beschichtetes Wärmeschutzglas kann jedoch deutlich stärker wirken.</p></div></article>
+            <article><span class="level level-mid">mittel</span><div><h3>Ziegel und mehrere Wände</h3><p>Jede zusätzliche Wand summiert den Verlust. Ungünstige schräge Durchdringungswinkel verlängern den Weg durch das Material.</p></div></article>
+            <article><span class="level level-high">hoch</span><div><h3>Stahlbeton, Metall, Spiegel</h3><p>Stahlbewehrung und Metallflächen reflektieren oder blockieren Funkwellen und können Funklöcher verursachen.</p></div></article>
+            <article><span class="level level-high">hoch</span><div><h3>Wasserhaltige Materialien</h3><p>Aquarien, feuchte Bauteile und große Pflanzen absorbieren einen Teil der Funkenergie, besonders im 2,4-GHz-Bereich.</p></div></article>
+          </div>
+          <div class="definition"><strong>dB und dBm</strong><p><strong>dB</strong> beschreibt einen relativen Gewinn oder Verlust. Ein Verlust von 3 dB entspricht ungefähr einer Halbierung der Leistung. <strong>dBm</strong> ist ein absoluter Leistungspegel; bei WLAN ist −50 dBm stärker als −80 dBm.</p></div>
+        </section>
+
+        <section id="simulator-wlan" class="content-section simulator-card" data-module="wlan-simulator">
+          <div class="sim-header"><div><p class="section-number">Interaktiv</p><h2>WLAN-Signal simulieren</h2><p>Die Berechnung ist ein didaktisches Modell. Reale Gebäude, Antennen und Funkstandards können zu anderen Ergebnissen führen.</p></div><span class="sim-label">Live-Modell</span></div>
+          <div class="sim-grid">
+            <div class="sim-controls-panel">
+              <label>Frequenzband<select id="wlan-frequency"><option value="2.4">2,4 GHz</option><option value="5" selected>5 GHz</option><option value="6">6 GHz</option></select></label>
+              <label>Hindernis<select id="wlan-obstacle"><option value="0">Freie Sicht</option><option value="3">Holz / Trockenbau</option><option value="7">Ziegelwand</option><option value="15" selected>Stahlbeton</option><option value="22">Wasser / Aquarium</option><option value="30">Metallfläche</option></select></label>
+              <label>Entfernung <output id="wlan-distance-output">10 m</output><input id="wlan-distance" type="range" min="1" max="30" value="10"></label>
+              <div class="sim-result-list">
+                <div><span>Empfangspegel</span><strong id="wlan-rssi">−65 dBm</strong></div>
+                <div><span>Modell-Datenrate</span><strong id="wlan-speed">300 Mbit/s</strong></div>
+                <div><span>Qualität</span><strong id="wlan-quality" class="quality good">Gut</strong></div>
+              </div>
+            </div>
+            <div class="signal-stage" aria-label="Visualisierung des Funkwegs">
+              <div class="router-node"><span>📡</span><small>Router</small></div>
+              <div class="wave-lines"><i></i><i></i><i></i><i></i></div>
+              <div id="wlan-wall" class="wall wall-concrete"><span>Hindernis</span></div>
+              <div class="device-node"><span>💻</span><small>Endgerät</small></div>
+              <div id="signal-meter" class="signal-meter"><b></b><b></b><b></b><b></b></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="router" class="content-section">
+          <p class="section-number">04 · Praxis</p>
+          <h2>Router und WLAN sinnvoll optimieren</h2>
+          <div class="checklist numbered">
+            <article><span>1</span><div><h3>Zentral und erhöht aufstellen</h3><p>Der Router sollte frei stehen, möglichst in der Nähe der tatsächlich genutzten Räume. Schränke, Kellerecken und der Platz hinter einem Fernseher sind ungünstig.</p></div></article>
+            <article><span>2</span><div><h3>Passendes Frequenzband nutzen</h3><p>2,4 GHz eignet sich oft für Reichweite, 5 oder 6 GHz für hohe Datenraten bei kurzer Distanz. Automatische Bandsteuerung kann die Auswahl übernehmen.</p></div></article>
+            <article><span>3</span><div><h3>Funkumgebung prüfen</h3><p>Viele Nachbarnetze auf demselben Kanal teilen sich die verfügbare Sendezeit. Moderne Router wählen häufig automatisch einen geeigneten Kanal.</p></div></article>
+            <article><span>4</span><div><h3>Firmware aktuell halten</h3><p>Updates schließen Sicherheitslücken und verbessern Stabilität sowie Kompatibilität.</p></div></article>
+            <article><span>5</span><div><h3>Mesh oder Netzwerkkabel einsetzen</h3><p>Bei mehreren Etagen oder Stahlbeton ist ein kabelgebundener Access Point meist zuverlässiger als ein einfacher Repeater. Mesh-Systeme erleichtern den Wechsel zwischen Zugangspunkten.</p></div></article>
+          </div>
+          <div class="warning"><strong>Powerline ist keine Universallösung.</strong><p>Die Datenübertragung über Stromleitungen hängt stark von der Elektroinstallation ab und kann Funkdienste stören. Vor dem dauerhaften Einsatz sollte die Leistung im eigenen Gebäude getestet werden.</p></div>
+        </section>
+
+        <section id="leitungen" class="content-section">
+          <p class="section-number">05 · Übertragungsmedien</p>
+          <h2>Kupferkabel und Glasfaser</h2>
+          <div class="versus-grid">
+            <article class="versus-card copper"><span class="versus-icon">⚡</span><p class="card-kicker">Elektrische Signale</p><h3>Kupfer</h3><ul><li>Bewährte und günstige Technik</li><li>Ethernet mit Twisted-Pair-Kabeln im lokalen Netz</li><li>Je nach Kategorie bis 10 Gbit/s über typische Gebäudestrecken</li><li>Empfindlicher gegenüber elektromagnetischen Störungen</li><li>Bei DSL sinkt die Datenrate mit Leitungslänge und Leitungsqualität</li></ul></article>
+            <article class="versus-card fiber"><span class="versus-icon">✨</span><p class="card-kicker">Optische Signale</p><h3>Glasfaser</h3><ul><li>Sehr hohe Bandbreiten und geringe Dämpfung</li><li>Unempfindlich gegenüber elektromagnetischen Störfeldern</li><li>Geeignet für große Entfernungen und Ausbaureserven</li><li>Benötigt optische Sender, Empfänger und passende Stecktechnik</li><li>Mechanisch empfindlicher gegen starke Biegung und Verschmutzung</li></ul></article>
+          </div>
+          <div class="note"><strong>Kein Medium ist „unbegrenzt“:</strong> Auch Glasfaser hat Verluste und technische Kapazitätsgrenzen. In der Praxis sind jedoch deutlich höhere Datenraten und längere Strecken als mit klassischen Kupferzugängen möglich.</div>
+        </section>
+
+        <section id="simulator-kabel" class="content-section simulator-card" data-module="cable-simulator">
+          <div class="sim-header"><div><p class="section-number">Interaktiv</p><h2>Leitungstypen vergleichen</h2><p>Der Vergleich zeigt typische Tendenzen. Er bildet keinen konkreten Tarif oder eine reale Leitungsmessung ab.</p></div><span class="sim-label">Live-Vergleich</span></div>
+          <div class="range-grid">
+            <label>Entfernung zum Verteiler <output id="cable-distance-output">500 m</output><input id="cable-distance" type="range" min="100" max="3000" step="100" value="500"></label>
+            <label>Dateigröße <output id="cable-size-output">10 GB</output><input id="cable-size" type="range" min="1" max="50" value="10"></label>
+            <label>Störumgebung<select id="cable-interference"><option value="none">normal</option><option value="high">starke elektromagnetische Störungen</option></select></label>
+          </div>
+          <div class="result-compare">
+            <article><div class="result-title"><span>⚡</span><h3>Kupferzugang</h3></div><dl><div><dt>Modellrate</dt><dd id="copper-speed">250 Mbit/s</dd></div><div><dt>Signalbewertung</dt><dd id="copper-loss">gering</dd></div><div><dt>Ladezeit</dt><dd id="copper-time">5 Min. 20 Sek.</dd></div></dl></article>
+            <article><div class="result-title"><span>✨</span><h3>Glasfaserzugang</h3></div><dl><div><dt>Modellrate</dt><dd id="fiber-speed">1.000 Mbit/s</dd></div><div><dt>Signalbewertung</dt><dd id="fiber-loss">sehr gering</dd></div><div><dt>Ladezeit</dt><dd id="fiber-time">1 Min. 20 Sek.</dd></div></dl></article>
+          </div>
+        </section>
+
+        <section class="content-section sources-section">
+          <p class="section-number">Quellen & Vertiefung</p><h2>Weiterführende Informationen</h2>
+          <ul class="source-list"><li><a href="https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/Frequenzen/OeffentlicheNetze/LokaleNetze/_functions/faq_2%2C4%20bzw.%205%20GHz.html" target="_blank" rel="noopener">Bundesnetzagentur: WLAN-Frequenzen bei 2,4 und 5 GHz</a></li><li><a href="https://www.bundesnetzagentur.de/SharedDocs/Pressemitteilungen/DE/2021/20210714_WLAN6GHz.html" target="_blank" rel="noopener">Bundesnetzagentur: WLAN-Nutzung im 6-GHz-Bereich</a></li></ul>
+        </section>
+
+        <nav class="chapter-next" aria-label="Nächstes Kapitel"><span>Nächstes Kapitel</span><a href="sicherheit.html"><strong>Cybersicherheit & Datenschutz</strong><b>→</b></a></nav>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="index.html"><img src="assets/logo.svg" alt="" width="40" height="40"><span><strong>Cyberpedia</strong><small>EK2 Digitalprojekt</small></span></a><p>Eine schulische Informationshomepage zu Netzwerktechnik, Cybersicherheit und Medienkompetenz.</p></div><div><h2>Navigation</h2><a href="netzwerke.html">Netzwerke</a><a href="sicherheit.html">Sicherheit</a><a href="medienkompetenz.html">Medienkompetenz</a><a href="quiz.html">Quiz</a></div><div><h2>Projekt</h2><p>Erarbeitet im Informatikunterricht der Eingangsklasse EK2 an einer nicht-gewerblichen beruflichen Schule.</p><p class="footer-note">Schülerprojekt – keine offizielle Schulwebsite.</p></div></div><div class="container footer-bottom"><span>© 2026 Cyberpedia · Eingangsklasse EK2</span><a href="#main-content">Nach oben ↑</a></div></footer>
+</body>
+</html>
