@@ -107,7 +107,7 @@ Das Bild wurde mit der integrierten Bildgenerierung im Rastermodus erstellt.
 
 ### Logo im Seitenkopf und Fußbereich
 
-Das gleiche fotorealistische Schildmotiv wird als `assets/cyberpedia-logo.png` auch im sichtbaren Markenbereich oben links und im Fußbereich eingesetzt. Die 192 × 192 Pixel große PNG-Datei ist für hochauflösende Displays optimiert und wird auf der Website mit 44 beziehungsweise 40 Pixeln dargestellt. Das frühere Vektorlogo wurde vollständig ersetzt; die Website verwendet für das Cyberpedia-Logo keine SVG-Datei mehr.
+Das gleiche fotorealistische Schildmotiv wird als `assets/cyberpedia-logo.png` auch im sichtbaren Markenbereich oben links und im Fußbereich eingesetzt. Die 192 × 192 Pixel große PNG-Datei ist für hochauflösende Displays optimiert und wird auf der Website im Seitenkopf mit 56 Pixeln, auf kleinen Bildschirmen mit 50 Pixeln und im Fußbereich mit 42 Pixeln dargestellt. Ein feiner Rahmen, mehr Abstand und ein zurückhaltender Lichtschein sorgen für eine hochwertigere Wirkung. Das frühere Vektorlogo wurde vollständig ersetzt; die Website verwendet für das Cyberpedia-Logo keine SVG-Datei mehr.
 
 ## 7. Barrierearmut
 
@@ -245,3 +245,4 @@ Nach einer Änderung empfiehlt sich:
 | 21.07.2026 | vollständige Projektdokumentation angelegt |
 | 21.07.2026 | sichtbares Kopf- und Fußzeilenlogo vollständig auf fotorealistisches PNG umgestellt |
 | 21.07.2026 | aufrufbare EK2-Namensliste mit Platzhaltern und Zustimmungshinweis ergänzt |
+| 21.07.2026 | Seitenkopf-Logo vergrößert und mit dezenterem Premium-Licht- und Rahmeneffekt verfeinert |
