@@ -33,6 +33,8 @@ Eine vollständige chronologische Dokumentation einschließlich Veröffentlichun
 - Durchsuchbares Glossar
 - Fotorealistisches Titelmotiv und moderne Mikrointeraktionen
 - Fotorealistisches Raster-Favicon für Browser-Tabs und Mobilgeräte
+- Fotorealistisches Raster-Logo im Seitenkopf und Fußbereich
+- Aufrufbare EK2-Namensliste mit zentral pflegbaren, datenschutzfreundlichen Vornamen
 - Lesefortschritt, aktive Kapitelmarkierung und Schaltfläche „Nach oben“
 - Berücksichtigung der Systemeinstellung für reduzierte Bewegung
 - Fachliche Präzisierungen bei Funkwellenausbreitung, Glasfaser, HTTPS, Backups und DSGVO

@@ -79,6 +79,7 @@ Alle Funktionen liegen zentral in `script.js`:
 - Vergleichsmodell für Kupfer- und Glasfaserzugänge;
 - Quiz mit zufälligen Fragen, Fortschrittsanzeige, Auswertung und Erklärungen;
 - Scrollanimationen, Lesefortschritt, Kapitelmarkierung und „Nach oben“-Funktion.
+- aufrufbare EK2-Namensliste im Fußbereich mit zentral gepflegten Vornamen.
 
 ## 6. Bildmaterial
 
@@ -102,7 +103,11 @@ Der finale Generierungsauftrag lautete:
 
 > Use case: product-mockup. Asset type: square raster favicon and browser-tab logo for the German educational website “Cyberpedia”. Create a photorealistic miniature high-tech cyber shield as a premium studio product photograph. Use a deep midnight-navy background, one centered front-facing shield made from dark brushed titanium and sapphire-blue glass, and a simple glowing cyan network core. Keep it symmetrical, high-contrast and readable at 16 × 16 and 32 × 32 pixels. No text, letters, numbers, watermark, brand marks, browser chrome, extra objects, flat vector style or cartoon look.
 
-Das Bild wurde mit der integrierten Bildgenerierung im Rastermodus erstellt. Das vorhandene `assets/logo.svg` bleibt ausschließlich als einheitliches Markenbild im Seitenkopf und im Fußbereich erhalten; für den Browser-Tab werden keine SVG-Dateien mehr referenziert.
+Das Bild wurde mit der integrierten Bildgenerierung im Rastermodus erstellt.
+
+### Logo im Seitenkopf und Fußbereich
+
+Das gleiche fotorealistische Schildmotiv wird als `assets/cyberpedia-logo.png` auch im sichtbaren Markenbereich oben links und im Fußbereich eingesetzt. Die 192 × 192 Pixel große PNG-Datei ist für hochauflösende Displays optimiert und wird auf der Website mit 44 beziehungsweise 40 Pixeln dargestellt. Das frühere Vektorlogo wurde vollständig ersetzt; die Website verwendet für das Cyberpedia-Logo keine SVG-Datei mehr.
 
 ## 7. Barrierearmut
 
@@ -116,8 +121,17 @@ Die Website enthält:
 - einen Sprunglink zum Hauptinhalt;
 - respektierte Systemeinstellungen für reduzierte Bewegung;
 - verständliche Rückmeldungen bei Suche, Simulationen und Quiz.
+- einen per Tastatur bedienbaren Namensdialog mit Fokusführung, Escape-Unterstützung und sichtbarer Schließen-Schaltfläche.
 
-## 8. Suchmaschinen und Linkvorschau
+## 8. Freiwillige Namensnennung der Schülerinnen und Schüler
+
+Der Text „Eingangsklasse EK2“ im unteren Seitenbereich ist auf allen fünf Seiten als Schaltfläche umgesetzt. Beim Anklicken öffnet sich eine responsive Namensansicht. Bis zur Freigabe echter Vornamen enthält sie neutrale Platzhalter.
+
+Die Namen werden genau einmal am Anfang von `script.js` im Array `STUDENT_FIRST_NAMES` gepflegt. Ein Platzhalter wie `"Vorname 1"` kann dort beispielsweise durch `"Anna"` ersetzt werden. Weitere Einträge können ergänzt oder nicht benötigte Platzhalter entfernt werden.
+
+Es werden ausschließlich Vornamen eingetragen, deren Veröffentlichung freiwillig zugestimmt wurde. Nachnamen, Kontaktdaten oder andere personenbezogene Angaben sind für diese Funktion nicht vorgesehen.
+
+## 9. Suchmaschinen und Linkvorschau
 
 Ergänzt wurden:
 
@@ -129,7 +143,7 @@ Ergänzt wurden:
 - passende `theme-color`-Angaben;
 - Raster-Favicons für Browser und Mobilgeräte.
 
-## 9. Qualitätssicherung
+## 10. Qualitätssicherung
 
 Die Endfassung wurde auf folgende Punkte geprüft:
 
@@ -140,11 +154,13 @@ Die Endfassung wurde auf folgende Punkte geprüft:
 - Funktion von Navigation, Glossarsuche, Simulationen und Quiz;
 - responsive Darstellung und mobile Navigation;
 - Vorhandensein aller Favicon-Größen;
+- Verwendung des Rasterlogos auf allen fünf Seiten;
+- Tastatur- und Mausbedienung des EK2-Namensdialogs;
 - Erreichbarkeit der veröffentlichten GitHub-Pages-Seite.
 
-Das Prüfskript `tools/validate_site.py` kontrolliert die statische Seitenstruktur. Die Favicon-Dateien können mit `tools/build_favicons.py` erneut aus dem Masterbild erzeugt werden.
+Das Prüfskript `tools/validate_site.py` kontrolliert die statische Seitenstruktur. Die Logo- und Favicon-Dateien können mit `tools/build_favicons.py` erneut aus dem Masterbild erzeugt werden.
 
-## 10. Veröffentlichung auf GitHub
+## 11. Veröffentlichung auf GitHub
 
 Am 21. Juli 2026 wurde das Repository `JakobSawazki/Cyberpedia-EK2` erstellt, der vollständige Projektstand auf den Hauptzweig `main` übertragen und GitHub Pages aktiviert.
 
@@ -154,7 +170,7 @@ Am 21. Juli 2026 wurde das Repository `JakobSawazki/Cyberpedia-EK2` erstellt, de
 
 Nach Änderungen an `main` wird die Website von GitHub Pages automatisch neu veröffentlicht.
 
-## 11. Einbindung bei Sawazki Electronics
+## 12. Einbindung bei Sawazki Electronics
 
 Cyberpedia wurde außerdem im Bereich „Unsere Projekte“ der Sawazki-Electronics-Homepage ergänzt:
 
@@ -172,7 +188,7 @@ Relevante Schritte im Sawazki-Electronics-Repository:
 
 Die Projektübersicht ist unter <https://jakobsawazki.github.io/sawazki-electronics/#projekte> erreichbar.
 
-## 12. Aktuelle Projektstruktur
+## 13. Aktuelle Projektstruktur
 
 ```text
 EK2_Cyberpedia_final/
@@ -190,8 +206,8 @@ EK2_Cyberpedia_final/
 ├── PROJEKTUEBERSICHT.md
 ├── DOKUMENTATION.md
 ├── assets/
-│   ├── logo.svg
 │   ├── cyberpedia-hero.webp
+│   ├── cyberpedia-logo.png
 │   ├── cyberpedia-favicon-source.png
 │   ├── cyberpedia-favicon.png
 │   └── cyberpedia-favicon-32.png
@@ -200,9 +216,11 @@ EK2_Cyberpedia_final/
     └── build_favicons.py
 ```
 
-## 13. Pflege und Weiterentwicklung
+## 14. Pflege und Weiterentwicklung
 
 Inhalte werden direkt in den fünf HTML-Dateien gepflegt. Globale Gestaltung gehört ausschließlich in `style.css`, globale Interaktionen ausschließlich in `script.js`. Neue Dateien sollten nur angelegt werden, wenn sie die bestehende übersichtliche Struktur sinnvoll ergänzen.
+
+Für die Namensliste werden ausschließlich die Werte in `STUDENT_FIRST_NAMES` am Anfang von `script.js` geändert. Vor jeder Veröffentlichung muss die freiwillige Zustimmung der genannten Schülerinnen und Schüler vorliegen.
 
 Nach einer Änderung empfiehlt sich:
 
@@ -211,7 +229,7 @@ Nach einer Änderung empfiehlt sich:
 3. Änderungen nachvollziehbar dokumentieren;
 4. den geprüften Stand in das GitHub-Repository übertragen.
 
-## 14. Chronologischer Überblick
+## 15. Chronologischer Überblick
 
 | Datum | Schritt |
 |---|---|
@@ -225,3 +243,5 @@ Nach einer Änderung empfiehlt sich:
 | 21.07.2026 | Projektkarten in die gewünschte Reihenfolge gebracht |
 | 21.07.2026 | fotorealistisches Raster-Favicon erzeugt und auf allen Seiten eingebunden |
 | 21.07.2026 | vollständige Projektdokumentation angelegt |
+| 21.07.2026 | sichtbares Kopf- und Fußzeilenlogo vollständig auf fotorealistisches PNG umgestellt |
+| 21.07.2026 | aufrufbare EK2-Namensliste mit Platzhaltern und Zustimmungshinweis ergänzt |

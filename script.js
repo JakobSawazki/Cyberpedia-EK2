@@ -4,6 +4,18 @@
   const root = document.documentElement;
   const body = document.body;
 
+  // Aus Datenschutzgründen nur Vornamen eintragen, deren Veröffentlichung zugestimmt wurde.
+  const STUDENT_FIRST_NAMES = [
+    "Vorname 1",
+    "Vorname 2",
+    "Vorname 3",
+    "Vorname 4",
+    "Vorname 5",
+    "Vorname 6",
+    "Vorname 7",
+    "Vorname 8"
+  ];
+
   function initTheme() {
     let saved = null;
     try { saved = localStorage.getItem("cyberpedia-theme"); } catch (_) { /* Lokale Dateivorschau kann Speicherzugriff blockieren. */ }
@@ -150,6 +162,70 @@
         if (match) visible += 1;
       });
       if (empty) empty.hidden = visible !== 0;
+    });
+  }
+
+  function initStudentCredits() {
+    const triggers = [...document.querySelectorAll(".student-credits-trigger")];
+    if (!triggers.length) return;
+
+    const dialog = document.createElement("dialog");
+    dialog.id = "student-credits-dialog";
+    dialog.className = "student-credits-dialog";
+    dialog.setAttribute("aria-labelledby", "student-credits-title");
+    dialog.innerHTML = `
+      <div class="student-credits-card">
+        <button class="student-credits-close" type="button" aria-label="Namensliste schließen">×</button>
+        <p class="student-credits-kicker">Das Team hinter Cyberpedia</p>
+        <h2 id="student-credits-title">Eingangsklasse EK2</h2>
+        <p class="student-credits-intro">Hier können die Vornamen der Schülerinnen und Schüler stehen, die ihrer Veröffentlichung zugestimmt haben.</p>
+        <ul class="student-name-list" aria-label="Mitwirkende Schülerinnen und Schüler"></ul>
+        <p class="student-consent-note"><span aria-hidden="true">●</span> Vornamen werden nur nach freiwilliger Zustimmung veröffentlicht.</p>
+      </div>
+    `;
+
+    const list = dialog.querySelector(".student-name-list");
+    STUDENT_FIRST_NAMES.forEach((name) => {
+      const item = document.createElement("li");
+      item.textContent = name;
+      if (/^Vorname \d+$/.test(name)) item.classList.add("placeholder");
+      list.appendChild(item);
+    });
+
+    document.body.appendChild(dialog);
+
+    function openDialog() {
+      triggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "true"));
+      body.classList.add("dialog-open");
+      if (typeof dialog.showModal === "function") dialog.showModal();
+      else dialog.setAttribute("open", "");
+      dialog.querySelector(".student-credits-close").focus();
+    }
+
+    function closeDialog() {
+      if (typeof dialog.close === "function") dialog.close();
+      else {
+        dialog.removeAttribute("open");
+        body.classList.remove("dialog-open");
+        triggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
+      }
+    }
+
+    triggers.forEach((trigger) => {
+      trigger.setAttribute("aria-controls", dialog.id);
+      trigger.setAttribute("aria-haspopup", "dialog");
+      trigger.setAttribute("aria-expanded", "false");
+      trigger.addEventListener("click", openDialog);
+    });
+
+    dialog.querySelector(".student-credits-close").addEventListener("click", closeDialog);
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) closeDialog();
+    });
+    dialog.addEventListener("close", () => {
+      body.classList.remove("dialog-open");
+      triggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
+      triggers[0]?.focus();
     });
   }
 
@@ -436,6 +512,7 @@
   initNavigation();
   initPageEnhancements();
   initGlossarySearch();
+  initStudentCredits();
   initWlanSimulator();
   initCableSimulator();
   initQuiz();

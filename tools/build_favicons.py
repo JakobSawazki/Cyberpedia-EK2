@@ -1,4 +1,4 @@
-"""Create the raster favicon variants from the generated master artwork."""
+"""Create the raster favicon and brand-logo variants from the master artwork."""
 
 from pathlib import Path
 
@@ -21,6 +21,9 @@ with Image.open(SOURCE) as master:
     )
     resized(master, 32).save(
         ASSETS / "cyberpedia-favicon-32.png", format="PNG", optimize=True
+    )
+    resized(master, 192).save(
+        ASSETS / "cyberpedia-logo.png", format="PNG", optimize=True
     )
     resized(master, 256).save(
         ROOT / "favicon.ico",
