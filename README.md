@@ -13,7 +13,10 @@ Finale, redaktionell konsolidierte Fassung des Homepageprojekts der Eingangsklas
 - `quiz.html` – zufallsgenerierter Lerncheck
 - `style.css` – einzige zentrale CSS-Datei
 - `script.js` – Navigation, Darstellungsmodus, Lesefortschritt, Scrollanimationen, Simulationen, Glossarsuche und Quiz
-- `assets/` – Logo, Schüler-Infografik und fotorealistisches Titelmotiv
+- `assets/` – Logo, Schüler-Infografik, fotorealistisches Titelmotiv und Raster-Favicons
+- `favicon.ico` – Browser-Tab-Logo in mehreren Auflösungen
+- `DOKUMENTATION.md` – vollständige Dokumentation aller bisherigen Projektphasen
+- `tools/` – Prüfskript und reproduzierbare Favicon-Erzeugung
 
 ## Nutzung
 
@@ -22,6 +25,8 @@ Die Homepage benötigt keinen Build-Prozess. `index.html` kann lokal geöffnet o
 Für alle Funktionen sollte die Ordnerstruktur unverändert bleiben. Externe Links werden ausschließlich für weiterführende Quellen geöffnet; die eigentliche Homepage funktioniert offline.
 
 Die lokalen Verweise und IDs lassen sich optional mit `python tools/validate_site.py` prüfen.
+
+Die vollständige Entstehungs-, Gestaltungs-, Prüf- und Veröffentlichungshistorie steht in [DOKUMENTATION.md](DOKUMENTATION.md).
 
 ## Redaktionelle Hinweise
 

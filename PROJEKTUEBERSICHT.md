@@ -4,6 +4,8 @@
 
 Die ursprünglichen Einzelarbeiten wurden zu einer einheitlichen, wartbaren Informationshomepage zusammengeführt. Die finale Fassung verwendet fünf HTML-Dateien, eine zentrale CSS-Datei und eine JavaScript-Datei.
 
+Eine vollständige chronologische Dokumentation einschließlich Veröffentlichung, Einbindung bei Sawazki Electronics und neuem Raster-Favicon befindet sich in [DOKUMENTATION.md](DOKUMENTATION.md).
+
 ## Zuordnung der Ausgangsinhalte
 
 | Ursprünglicher Bereich | Finale Seite |
@@ -30,6 +32,7 @@ Die ursprünglichen Einzelarbeiten wurden zu einer einheitlichen, wartbaren Info
 - Themenübergreifendes Quiz mit zufälliger Fragenauswahl und Erklärungen
 - Durchsuchbares Glossar
 - Fotorealistisches Titelmotiv und moderne Mikrointeraktionen
+- Fotorealistisches Raster-Favicon für Browser-Tabs und Mobilgeräte
 - Lesefortschritt, aktive Kapitelmarkierung und Schaltfläche „Nach oben“
 - Berücksichtigung der Systemeinstellung für reduzierte Bewegung
 - Fachliche Präzisierungen bei Funkwellenausbreitung, Glasfaser, HTTPS, Backups und DSGVO
